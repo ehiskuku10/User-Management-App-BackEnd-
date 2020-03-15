@@ -9,13 +9,14 @@ exports.addUser = async (req, res) => {
       phone_no: phone
     });
 
-    let BDate = new Date(dob)
-    let age = ~~((Date.now() - BDate) / (31557600000))
-    console.log(age)
+    let BDate = new Date(dob);
+    let age = ~~((Date.now() - BDate) / 31557600000);
+    console.log(age);
 
     if (age <= 14 || age >= 25) {
       return res.status(400).json({
-        message: "Error: Sorry, can't create account. You are either too young or too old."
+        message:
+          "Error: Sorry, can't create account. You are either too young or too old."
       });
     }
 
@@ -28,9 +29,8 @@ exports.addUser = async (req, res) => {
         dob: dob
       }).save();
 
-
       res.status(201).json({
-        message: "Success",
+        message: "Account Created Successfully!",
         user
       });
     } else {
@@ -102,7 +102,7 @@ exports.editUser = async (req, res) => {
       await user.save();
 
       res.status(201).json({
-        message: "Success",
+        message: "Successfully Edited User Account!",
         user
       });
     } else {
