@@ -130,7 +130,7 @@ exports.deleteUser = async (req, res) => {
       });
     } else {
       res.status(404).json({
-        message: "Error: User does not exist"
+        message: "Error: User does not exist. Create an account"
       });
     }
   } catch (error) {
