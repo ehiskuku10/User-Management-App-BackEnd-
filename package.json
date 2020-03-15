@@ -1,0 +1,34 @@
+{
+  "name": "simple-crud-api",
+  "version": "1.0.0",
+  "description": "A Simple CRUD Application",
+  "private": true,
+  "engines": {
+    "node": ">= 7.6.0"
+  },
+  "scripts": {
+    "prod": "node ./start.js --no-deprication",
+    "watch": "nodemon ./start.js --ignore public/",
+    "start": "concurrently \"npm run watch\" \"npm run assets\" --names \"💻,📦\" --prefix name",
+    "assets": "webpack -w --display-max-modules 0"
+  },
+  "author": "Kuku Ehidiamen",
+  "license": "ISC",
+  "browserslist": "last 2 versions",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "body-parser": "^1.19.0",
+    "concurrently": "^5.0.0",
+    "cookie-parser": "^1.4.4",
+    "cors": "^2.8.5",
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "express-validator": "^5.2.0",
+    "joi": "^14.3.1",
+    "mongoose": "^5.7.4",
+    "mongoose-mongodb-errors": "0.0.2",
+    "webpack-cli": "^3.3.10"
+  },
+  "main": "start.js",
+  "devDependencies": {}
+}
