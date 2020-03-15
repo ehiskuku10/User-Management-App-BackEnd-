@@ -48,7 +48,7 @@ exports.allUsers = async (req, res) => {
     const users = await User.find();
     if (!users.length) {
       res.status(404).json({
-        message: "Error: Users not found!"
+        message: "Error: Users not found! Create an account"
       });
     } else {
       res.status(200).json({
@@ -130,7 +130,7 @@ exports.deleteUser = async (req, res) => {
       });
     } else {
       res.status(404).json({
-        message: "Error: User does not exist. Create an account"
+        message: "Error: User does not exist."
       });
     }
   } catch (error) {
