@@ -10,7 +10,8 @@
     "prod": "node ./start.js --no-deprication",
     "watch": "nodemon ./start.js --ignore public/",
     "start": "concurrently \"npm run watch\" \"npm run assets\" --names \"💻,📦\" --prefix name",
-    "assets": "webpack -w --display-max-modules 0"
+    "assets": "webpack -w --display-max-modules 0",
+    "heroku-prebuild": "npm install --dev"
   },
   "author": "Kuku Ehidiamen",
   "license": "ISC",
@@ -27,6 +28,7 @@
     "joi": "^14.3.1",
     "mongoose": "^5.7.4",
     "mongoose-mongodb-errors": "0.0.2",
+    "nodemon": "^2.0.2",
     "webpack-cli": "^3.3.10"
   },
   "main": "start.js",
