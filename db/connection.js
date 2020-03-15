@@ -1,7 +1,7 @@
 //import mongoose (mongodb driver)
 const mongoose = require('mongoose')
 
-mongoose.connect(process.env.DATABASE, {
+mongoose.connect(process.env.MONGODB_URI || process.env.DATABASE, {
     useCreateIndex: true,
     useUnifiedTopology: true,
     useNewUrlParser: true
